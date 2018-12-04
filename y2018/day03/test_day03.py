@@ -1,5 +1,3 @@
-import pytest
-
 from y2018.day03 import day03
 
 

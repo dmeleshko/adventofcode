@@ -1,4 +1,3 @@
-import math
 import re
 import typing
 from dataclasses import dataclass

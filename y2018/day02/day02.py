@@ -15,8 +15,6 @@ def classify(s: str) -> typing.Tuple[int, int]:
 
 
 def part1(inp: typing.List[str]) -> int:
-    count_2 = 0
-    count_3 = 0
     step1 = map(classify, inp)
     step2 = reduce(lambda x, y: (x[0]+y[0], x[1]+y[1]), step1, (0, 0))
     step3 = step2[0]*step2[1]

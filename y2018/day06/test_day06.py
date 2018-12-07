@@ -8,7 +8,7 @@ def test_part1(example_input):
 
 
 def test_part2(example_input):
-    assert part2(example_input) == 16
+    assert part2(example_input, 32) == 16
 
 
 @pytest.fixture()

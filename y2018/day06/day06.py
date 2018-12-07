@@ -99,13 +99,13 @@ def calc_total_distances(points, rows, cols):
     ]
 
 
-def part2(points: typing.List[Point]) -> int:
+def part2(points: typing.List[Point], max_distance: int) -> int:
     min_x, max_x, min_y, max_y = calc_grid_params(points)
     rows = max_y - min_y + 1
     cols = max_x - min_x + 1
     translated_points = translate_points(points, min_x, min_y)
     total_distances = calc_total_distances(translated_points, rows, cols)
-    return len(list(filter(lambda d: d<10000, total_distances)))
+    return len(list(filter(lambda d: d<max_distance, total_distances)))
 
 
 def parse_input(lines: typing.List[str]):
@@ -117,4 +117,4 @@ def parse_input(lines: typing.List[str]):
 
 if __name__ == '__main__':
     with open('input.txt') as fp:
-        print(part2(parse_input(fp.readlines())))
+        print(part2(parse_input(fp.readlines()), 10000))

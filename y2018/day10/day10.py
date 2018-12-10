@@ -20,26 +20,6 @@ def parse_lines(lines: typing.Iterable[str]) -> typing.List[Point]:
     return points
 
 
-def calc_dist(p1: Point, p2: Point) -> int:
-    return abs(p1.x-p2.x) + abs(p1.y-p2.y)
-
-
-def min_distances(points: typing.Iterable[Point]) -> typing.List[int]:
-    results = []
-    for p1 in points:
-        dists = []
-        for p2 in points:
-            if not (p1 is p2):
-                dists.append(calc_dist(p1, p2))
-        results.append(min(dists))
-    return results
-
-
-def avg_min_distance(points: typing.Iterable[Point]):
-    min_dists = min_distances(points)
-    return sum(min_dists)/len(min_dists)
-
-
 def calc_max_height(points: typing.Iterable[Point]):
     _, min_y = min_params(points)
     _, max_y = max_params(points)
